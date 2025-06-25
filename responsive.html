@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="responsive.css" />
   </head>
   <body>
+    <!-- Breakpoint Indicator -->
     <div class="breakpoint-indicator"></div>
 
-    <!-- Navigation -->
+    <!-- Navigation Example -->
     <nav class="nav">
       <div class="nav-container">
         <div class="logo">Responsive</div>
@@ -23,6 +24,197 @@
       </div>
     </nav>
 
-    <script src="responsive.js"></script>
+    <div class="container">
+      <!-- Hero Section with Flexible Typography -->
+      <section class="hero">
+        <h1 class="hero-title">Responsive Design in Action</h1>
+        <p class="subtitle">
+          Resize your browser window to see how each element adapts using
+          mobile-first design, flexible typography, and strategic breakpoints.
+        </p>
+
+        <div class="resize-instruction">
+          <strong>👆 Try This:</strong> Drag the edge of your browser window to
+          resize it and watch how the layout adapts at different breakpoints.
+          Notice the indicator in the top-right corner!
+        </div>
+      </section>
+
+      <!-- Mobile-First Demo -->
+      <section class="demo-section">
+        <h2 class="demo-title">1. Mobile-First Approach</h2>
+        <p>
+          This entire page starts with mobile styles as the base, then adds
+          complexity for larger screens using <code>min-width</code> media
+          queries. The navigation menu demonstrates this perfectly - it shows a
+          hamburger menu on mobile and expands to a full menu on tablets and
+          desktops.
+        </p>
+      </section>
+
+      <!-- Flexible Typography Demo -->
+      <section class="demo-section">
+        <h2 class="demo-title">2. Flexible Typography</h2>
+        <p>
+          All text sizes use <code>clamp()</code> functions. For example, the
+          main title uses <code>clamp(1.5rem, 5vw, 3rem)</code> - it never gets
+          smaller than 1.5rem or larger than 3rem, but scales smoothly between
+          those limits based on viewport width.
+        </p>
+      </section>
+
+      <!-- Fluid Grid System -->
+      <section class="demo-section">
+        <h2 class="demo-title">3. Breakpoint Strategy & Fluid Layouts</h2>
+        <p>Watch how the card grid below changes:</p>
+        <ul style="margin: 1rem 0; padding-left: 2rem">
+          <li><strong>Mobile (default):</strong> 1 column</li>
+          <li><strong>Tablet (768px+):</strong> 2 columns</li>
+          <li><strong>Desktop (1024px+):</strong> 3 columns</li>
+          <li><strong>Large screens (1440px+):</strong> 4 columns</li>
+        </ul>
+      </section>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3 class="card-title">Performance Optimized</h3>
+          <p class="card-text">
+            Mobile-first approach ensures faster loading times by delivering
+            essential content first, then progressively enhancing for larger
+            devices.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">SEO Friendly</h3>
+          <p class="card-text">
+            Google prioritizes mobile-friendly websites. This responsive
+            approach improves search rankings and user experience across all
+            devices.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Cost Effective</h3>
+          <p class="card-text">
+            One responsive website serves all devices, eliminating the need for
+            separate mobile apps or desktop versions.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Future Proof</h3>
+          <p class="card-text">
+            Fluid layouts adapt to new screen sizes automatically, ensuring your
+            design works on devices that don't exist yet.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">User Experience</h3>
+          <p class="card-text">
+            Consistent experience across all devices means users can seamlessly
+            switch between phone, tablet, and desktop.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Maintenance</h3>
+          <p class="card-text">
+            Single codebase reduces complexity and maintenance overhead compared
+            to managing multiple platform-specific versions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Section with Content-Based Layout -->
+      <section class="feature-section">
+        <div class="container">
+          <div class="feature-grid">
+            <div class="feature-content">
+              <h2>Adaptive Content Layout</h2>
+              <p>
+                This section demonstrates how content can reflow based on
+                available space. On mobile, content stacks vertically. On larger
+                screens, it arranges in columns for better readability.
+              </p>
+              <ul class="feature-list">
+                <li>Viewport-based spacing using clamp()</li>
+                <li>CSS Grid with fractional units (fr)</li>
+                <li>Content-driven breakpoint decisions</li>
+                <li>Progressive enhancement principles</li>
+              </ul>
+            </div>
+            <div class="feature-visual">
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.9);
+                  padding: 2rem;
+                  border-radius: 12px;
+                  text-align: center;
+                "
+              >
+                <div
+                  style="
+                    width: 100%;
+                    height: 200px;
+                    background: linear-gradient(45deg, #667eea, #764ba2);
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-weight: 600;
+                  "
+                >
+                  Visual Content Area
+                  <br />
+                  <small style="opacity: 0.8; margin: 3px; padding: 3px"
+                    >Scales proportionally</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Implementation -->
+      <section class="demo-section">
+        <h2 class="demo-title">4. Real-World Implementation Tips</h2>
+        <div
+          style="
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+          "
+        >
+          <h4 style="color: #333; margin-bottom: 1rem">
+            Key CSS Techniques Used:
+          </h4>
+          <ul style="margin-left: 2rem; line-height: 1.8">
+            <li>
+              <strong>CSS Grid:</strong>
+              <code
+                >grid-template-columns: repeat(auto-fit, minmax(300px,
+                1fr))</code
+              >
+            </li>
+            <li>
+              <strong>Flexible Typography:</strong>
+              <code>font-size: clamp(1rem, 2.5vw, 2rem)</code>
+            </li>
+            <li>
+              <strong>Responsive Images:</strong>
+              <code>width: 100%; height: auto; object-fit: cover;</code>
+            </li>
+            <li>
+              <strong>Viewport Units:</strong>
+              <code>padding: clamp(1rem, 5vw, 3rem)</code>
+            </li>
+            <li>
+              <strong>Mobile-First Media Queries:</strong>
+              <code>@media (min-width: 768px)</code>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
